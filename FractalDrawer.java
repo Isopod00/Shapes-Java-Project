@@ -28,11 +28,12 @@ public class FractalDrawer {
       Triangle tri = new Triangle(x, y, width, height);
       tri.setColor(c);
       can.drawShape(tri);
+      level--;
       totalArea += tri.calculateArea();
       if(level != 0) {
-        drawTriangleFractal(width/2, height/2, x+width, y, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level-1);
-        drawTriangleFractal(width/2, height/2, x+width/4, y-height, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level-1);
-        drawTriangleFractal(width/2, height/2, x-width/2, y, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level-1);
+        drawTriangleFractal(width/2, height/2, x+width, y, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level);
+        drawTriangleFractal(width/2, height/2, x+width/4, y-height, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level);
+        drawTriangleFractal(width/2, height/2, x-width/2, y, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level);
       }
     }
 
@@ -44,10 +45,10 @@ public class FractalDrawer {
       level--;
       totalArea += circ.calculateArea();
       if(level != 0) {
-        drawCircleFractal(radius/2, x-radius, y, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level-1);
-        drawCircleFractal(radius/2, x+radius, y, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level-1);
-        drawCircleFractal(radius/2, x, y+radius, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level-1);
-        drawCircleFractal(radius/2, x, y-radius, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level-1);
+        drawCircleFractal(radius/2, x-radius, y, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level);
+        drawCircleFractal(radius/2, x+radius, y, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level);
+        drawCircleFractal(radius/2, x, y+radius, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level);
+        drawCircleFractal(radius/2, x, y-radius, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level);
       }
     }
 
@@ -59,10 +60,10 @@ public class FractalDrawer {
       level--;
       totalArea += rect.calculateArea();
       if(level != 0) {
-        drawRectangleFractal(width/2, height/2, x+width, y+height, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level-1);
-        drawRectangleFractal(width/2, height/2, x+width, y-height/2, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level-1);
-        drawRectangleFractal(width/2, height/2, x-width/2, y-height/2, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level-1);
-        drawRectangleFractal(width/2, height/2, x-width/2, y+height, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level-1);
+        drawRectangleFractal(width/2, height/2, x+width, y+height, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level);
+        drawRectangleFractal(width/2, height/2, x+width, y-height/2, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level);
+        drawRectangleFractal(width/2, height/2, x-width/2, y-height/2, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level);
+        drawRectangleFractal(width/2, height/2, x-width/2, y+height, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level);
     }
 }
 }
