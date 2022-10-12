@@ -18,6 +18,11 @@ class Main {
 
     System.out.print("How many levels to draw? ");
     int level = scanner.nextInt();
+
+    while(level > 7 || level < 1) {
+      System.out.print("Please enter an integer between 1-7: ");
+      level = scanner.nextInt();
+    }
     
     drawer.drawFractal(type, level);
 
