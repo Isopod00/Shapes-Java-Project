@@ -6,11 +6,18 @@ class Main {
     
     Scanner scanner = new Scanner(System.in);
     
-      FractalDrawer drawer = new FractalDrawer();
-      
-      System.out.print("What type of shape should I draw? ");
-      String type = scanner.nextLine();
-      
-      drawer.drawFractal(type);
+    FractalDrawer drawer = new FractalDrawer();
+    
+    System.out.print("What type of shape should I draw? ");
+    String type = scanner.nextLine();
+
+    while(!type.equalsIgnoreCase("circle") && !type.equalsIgnoreCase("triangle") && !type.equalsIgnoreCase("rectangle")) {
+      System.out.print("Please enter triangle, circle, or rectangle: ");
+      type = scanner.nextLine();
+    }
+    
+    drawer.drawFractal(type);
+
+    scanner.close();
   }
 }
