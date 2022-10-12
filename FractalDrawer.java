@@ -9,14 +9,16 @@ public class FractalDrawer {
     // drawFractal creates a new Canvas object
     // and determines which shapes to draw a fractal by calling appropriate helper function
     // drawFractal returns the area of the fractal
-    public double drawFractal(String type) {
-      Canvas screen = new Canvas(800, 800);
+    public double drawFractal(String type, int level) {
+      int height = 1080;
+      int width = 1920;
+      Canvas screen = new Canvas(height, width);
       if (type.equalsIgnoreCase("triangle")) {
-        drawTriangleFractal(100, 100, 400, 300, new Color(0, 0, 255), screen, 7);
+        drawTriangleFractal(100, 100, width/2, height/2, new Color(0, 0, 255), screen, level);
       } else if(type.equalsIgnoreCase("rectangle")) {
-        drawRectangleFractal(100, 100, 400, 300, new Color(0, 0, 255), screen, 7);
+        drawRectangleFractal(100, 100, width/2, height/2, new Color(0, 0, 255), screen, level);
       } else if(type.equalsIgnoreCase("circle")) {
-        drawCircleFractal(100, 400, 300, new Color(0, 0, 255), screen, 7);
+        drawCircleFractal(100, width/2, height/2, new Color(0, 0, 255), screen, level);
       }
       return totalArea;
     }
@@ -26,7 +28,6 @@ public class FractalDrawer {
       Triangle tri = new Triangle(x, y, width, height);
       tri.setColor(c);
       can.drawShape(tri);
-      level--;
       totalArea += tri.calculateArea();
       if(level != 0) {
         drawTriangleFractal(width/2, height/2, x+width, y, new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)), can, level-1);

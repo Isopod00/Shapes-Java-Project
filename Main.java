@@ -15,8 +15,11 @@ class Main {
       System.out.print("Please enter triangle, circle, or rectangle: ");
       type = scanner.nextLine();
     }
+
+    System.out.print("How many levels to draw? ");
+    int level = scanner.nextInt();
     
-    drawer.drawFractal(type);
+    drawer.drawFractal(type, level);
 
     scanner.close();
   }
